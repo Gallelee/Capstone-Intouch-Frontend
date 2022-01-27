@@ -20,9 +20,11 @@ export default function Login() {
 
   function handleForm(event) {
     const userLogin = signIn;
-    axios.post("https://crud-intouch-backend.herokuapp.com/customAuth/signin", signIn);
+    axios.post(
+      "https://crud-intouch-backend.herokuapp.com/customAuth/signin",
+      userLogin
+    );
   }
-
 
   function handleLogin() {
     setRedirect(true);
@@ -59,6 +61,7 @@ export default function Login() {
               type="text"
               value={signIn.userName}
               onChange={handleChange}
+              name="userName"
             />
           </label>
           <label className="login-password">
@@ -68,6 +71,7 @@ export default function Login() {
               type="password"
               value={signIn.password}
               onChange={handleChange}
+              name="password"
             />
           </label>
           <input
